@@ -1,0 +1,50 @@
+@import "tailwindcss";
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* Spinner animation */
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Spinner styling */
+.spinner {
+  width: 10rem;  /* Adjust the size */
+  height: 10rem; /* Adjust the size */
+  border: 8px solid #00f;  /* Border color */
+  border-top: 8px solid #fff; /* Top border color (white to create spinning effect) */
+  border-radius: 50%; /* Make it circular */
+  animation: spin 2s linear infinite; /* Apply spinning animation */
+}
+
+/* Container to center the spinner and text */
+.spinner-container {
+  position: fixed;   /* Fixed position to cover the whole screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column; /* Stack spinner and text vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center;     /* Center horizontally */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  z-index: 1000; /* Ensure the spinner appears above other content */
+}
+
+/* Add margin to the text to separate it from the spinner */
+.spinner-container p {
+  margin-top: 1rem; /* Adjust the space between the spinner and text */
+  color: white;      /* Text color */
+  font-size: 1.25rem; /* Font size for the text */
+  text-align: center; /* Center the text horizontally */
+}
